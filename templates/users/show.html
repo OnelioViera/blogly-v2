@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% include 'nav.html' %}
+{% block title %}{{ user.full_name }}{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+  <h1 class="display-5 text-center m-5">Profiles</h1>
+  <div class="card shadow-lg p-3 m-5 bg-white rounded">
+    <div class="card-body">
+      <div class="row">
+
+
+
+        {% if user.image_url %}
+        <div class="col-sm-4 col-6">
+          <img src="{{ user.image_url }}" alt="{{ user.full_name }}" class="img-fluid w-75">
+        </div>
+        {% endif %}
+
+        <div class="col-sm-8 col-12">
+          <h2 class="mb-4">{{ user.full_name }}</h2>
+
+          <form>
+            <button class="btn btn-primary btn-md" formaction="/users/{{ user.id }}/edit" formmethod="GET">Edit
+            </button>
+            <button class="btn btn-danger btn-md mx-2" formaction="/users/{{ user.id }}/delete" formmethod="POST">Delete
+            </button>
+          <a href="/users" class="btn btn-secondary" role="button" data-bs-toggle="button">Cancel</a>
+
+          </form>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti voluptatum possimus odio
+            excepturi, veniam, iste aut ipsum est cumque dicta itaque expedita veritatis! Quasi minima, tempora
+            exercitationem ut culpa sint!</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% include "base-nav.html" %}
+
+{% block title %}Blogly{% endblock %}
+
+{% block content %}
+<div class="container text-center">
+  <!-- <img src="/static/img/blogly-5.jpg" class="text-center mb-2" alt="Blogly Image"> -->
+  <!-- <p style="font-size: 20px;">Let's explore the realms of knowledge and creativity together, one blog post at a time."</p> -->
+  <h1 class="display-6">Your Recent Posts</h1>
+</div>
+<hr />
+
+<div class="container">
+  
+  <!-- <h2 class="my-4">Your Recent Posts</h2> -->
+  <h3 class="mt-4">
+    Flask Is Awesome
+  </h3>
+  <p><em>By Onelio Viera on Thur Aug 24 2023, 4:40 PM </em></p>
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4">
+          <figure class="figure">
+            <img
+              src="https://i0.wp.com/theperfectroundgolf.com/wp-content/uploads/2022/04/placeholder.png?fit=1200%2C800&ssl=1/400x300"
+              class="figure-img img-fluid rounded"
+              alt="A generic square placeholder image with rounded corners in a figure.">
+            <figcaption class="figure-caption">A caption for the above image.</figcaption>
+          </figure>
+        </div>
+        <div class="col-md-8">
+          <p style="font-size: 18px;">Flask is a lovely framework for building web applications. It's easy to learn, and
+            easy to use.</p>
+
+        </div>
+
+    </div>
+    
+  </div>
+  <div class="card-footer">
+    <button type="button" class="btn btn-primary btn-sm">Edit</button>
+    <button type="button" class="btn btn-danger btn-sm">Delete</button>
+  </div>
+</div>
+</div>
+
+{% endblock %}

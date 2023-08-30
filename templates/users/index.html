@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% include "nav.html" %}
+{% block title %}Users{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="display-6 my-5 text-center">Blogly Profiles</h1>
+  <div class="row">
+    <div class="col">
+      <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="card-body m-4">
+          <h2 class="users-title">Edit Your Profiles</h2>
+
+          <ul>
+            {% for user in users %}
+            <li class="user-full-name">
+              <a href="/users/{{ user.id }}">{{ user.full_name }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+
+          <!-- <p><a class="btn btn-sm btn-success mx-2 mt-4" href="/users/new">Add Blogly User</a></p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

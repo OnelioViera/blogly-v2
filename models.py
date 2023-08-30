@@ -31,24 +31,24 @@ class User(db.Model):
 
       
 class Post(db.Model):
-  """Posts"""
+    """Posts"""
   
-  __tablename__ = "posts"
+    __tablename__ = "posts"
   
-  id = db.Column(db.Integer, primary_key=True)
-  title = db.Column(db.Text, nullable=False)
-  content = db.Column(db.Text, nullable=False)
-  created_at = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now)
-  user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.Text, nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
   
-def get_directory():
-    all_users = user.query.all()
+# def get_directory():
+#     all_users = user.query.all()
       
-    for user in all_users:
-        if user is not None:
-          print(first_name, last_name, image_url)
-        else:
-          print(user.name)
+#     for user in all_users:
+#         if user is not None:
+#           print(first_name, last_name, image_url)
+#         else:
+#           print(user.name)
   
 
 @property
@@ -56,6 +56,8 @@ def friendly_date(self):
   """Return formatted date"""
   
   return self.created_at.strftime("%a %b %-d  %Y, %-I:%M %p")
+
+
 
   
 def connect_db(app):

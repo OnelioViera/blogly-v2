@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% include 'nav.html' %}
+
+{% block title %}
+Add Post
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+  <div class="row d-flex justify-content-center vh-100 align-items-center">
+    <div class="col-md-6">
+      <h1>Add Post for {{ user.full_name }}</h1>
+      <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="card-body">
+          <form method="POST">
+
+            <div class="form-group row">
+              <label for="title" class="col-sm-2 col-form-label">Title</label>
+              <div class="col-sm-10">
+                <input class="form-control" id="title" name="title">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="content" class="col-sm-2 col-form-label">Content</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" id="content" name="content"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="ml-auto mr-3">
+                <a href="/users/{{ user.id }}" class="btn btn-info">Cancel</a>
+                <button type="submit" class="btn btn-success">Add</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
