@@ -1,0 +1,15 @@
+env:
+  PYTHON_VERSION: 3.9
+build:
+  steps:
+    - name: 'gcr.io/cloud-builders/python'
+      args: ['pip', 'install', '-r', 'requirements.txt']
+  # Uncomment the following lines if you have additional build steps, such as building frontend assets.
+  # - name: 'gcr.io/cloud-builders/npm'
+  #   args: ['install']
+  # - name: 'gcr.io/cloud-builders/npm'
+  #   args: ['run', 'build']
+web:
+  - name: 'app'
+    env: ['FLASK_ENV=production']
+    command: 'gunicorn -b 0.0.0.0:$PORT app:app'

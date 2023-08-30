@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row fluid d-flex justify-content-center align-items-center" style="height:80vh;">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h1 class="pb-2">Login</h1>
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                        <ul>
+                            {% for message in messages %}
+                            <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% endwith %}
+                        <form accept="/login" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="username" class="form-control" placeholder="Username" required>
+
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" class="form-control" placeholder="Password">
+                            </div>
+                            <small id="emailHelp" class="form-text text-muted mb-2">We'll never share your
+                                information with anyone else.</small>
+                            <button type="submit" value="Login" class="btn btn-dark btn-sm">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center mt-3">New user? <a href="/register">Register here</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

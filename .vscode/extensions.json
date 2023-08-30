@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "aaron-bond.better-comments",
+    "tushortz.python-extended-snippets",
+    "kevinrose.vsc-python-indent",
+    "ms-python.black-formatter",
+    "ysemeniuk.emmet-live",
+    "dbaeumer.vscode-eslint",
+    "ms-python.vscode-pylance",
+    "github.copilot"
+  ]
+}

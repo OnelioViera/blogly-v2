@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container text-center mt-5">
+    <img src="/static/blogly-5.jpg" class="w-25 mb-5 mt-5" alt="Jinja Flask">
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
+
+    {% if session.logged_in %}
+    <p>Good by, {{ session.username }}!</p>
+    <a href="/logout" class="btn btn-outline-dark btn-lg btn-sm role=" button" aria-pressed="true"">Logout</a>
+    {% else %}
+    <p>Not logged in</p>
+    <a href=" /login" class="btn btn-outline-dark btn-lg btn-sm" role="button" aria-pressed="true">Please Login</a>
+    {% endif %}
+
+</div>
+
+{% endblock %}
